@@ -3,6 +3,7 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 import { Alert } from "react-bootstrap";
 import { CustomInput } from "./CustomInput";
+import { postTrans } from "../heper/axiosHelper.js";
 
 const TransForm = () => {
   const [form, setForm] = useState({});
@@ -16,9 +17,11 @@ const TransForm = () => {
       [name]: value,
     });
   };
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
+    const result = await postTrans(form);
+    console.log(result);
   };
 
   const inputs = [
@@ -51,12 +54,13 @@ const TransForm = () => {
 
   return (
     <div className="mt-5">
+      {/* {resp.message && <Alert variant={resp.status == "success" ? "success"}>{resp.message}</Alert>} */}
       <Form className="shadow-lg border rounded p-3" onSubmit={handleOnSubmit}>
         <Row>
           <Col md={3}>
             <Form.Group className="mb-3">
               <Form.Label>Type</Form.Label>
-              <Form.Select name="type" onChange={handleOnChange}>
+              <Form.Select name="type" onChange={handleOnChange} required>
                 <option value=""> Select Option</option>
                 <option value="income"> Income</option>
                 <option value="expenses"> Expenses</option>
@@ -65,7 +69,12 @@ const TransForm = () => {
           </Col>
           {inputs.map((item, i) => (
             <Col md={2} key={i}>
-              <CustomInput key={i} {...item} onChange={handleOnChange} />
+              <CustomInput
+                key={i}
+                {...item}
+                onChange={handleOnChange}
+                required
+              />
             </Col>
           ))}
           <Col md={4}>

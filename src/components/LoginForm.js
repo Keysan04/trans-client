@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
-import { CustomInput } from "./CustomInput";
-import { loginUser } from "../heper/axiosHelper";
+import { CustomInput } from "./CustomInput.js";
+import { loginUser } from "../heper/axiosHelper.js";
 import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {

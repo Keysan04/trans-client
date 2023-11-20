@@ -13,6 +13,7 @@ const TopNav = () => {
   return (
     <Navbar expand="md" className="bg-info">
       <Container fluid>
+        {userObj?.name && <div>Welcome {userObj?.name}</div>}
         <Navbar.Brand href="#home">TR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -26,10 +27,6 @@ const TopNav = () => {
                 Signup
               </Link>
             )}
-
-            <Link to="#link" className="nav-link">
-              Signup
-            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
