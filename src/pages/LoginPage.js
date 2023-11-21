@@ -2,11 +2,12 @@ import React from "react";
 
 import { Col, Container, Row } from "react-bootstrap";
 import { LoginForm } from "../components/LoginForm";
-import TopNav from "../components/TopNav";
+import { TopNav } from "../components/TopNav";
 const LoginPage = () => {
   return (
     <>
       <TopNav />
+
       <Container fluid>
         <Row>
           <Col className="bg-primary text-light vh-100 d-flex justify-content-center align-items-center ">

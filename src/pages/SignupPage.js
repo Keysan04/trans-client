@@ -1,8 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { SignupForm } from "../components/SignupForm";
-import Transaction from "../components/Transaction";
-import TopNav from "../components/TopNav";
+import { TopNav } from "../components/TopNav";
 
 const SignupPage = () => {
   return (
@@ -20,7 +19,6 @@ const SignupPage = () => {
             <div className="shadow-lg p-3 border rounded">
               <h2>Signup Now</h2>
               <hr />
-
               <SignupForm />
             </div>
           </Col>

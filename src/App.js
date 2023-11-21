@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import Dashboard from "./pages/Dashboard";
-import PrivateRoute from "./components/PrivateRoute";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        {/* <PrivateRoute> */}
         <Route
           path="/dashboard"
           element={
@@ -20,7 +19,6 @@ function App() {
             </PrivateRoute>
           }
         />
-        {/* </PrivateRoute> */}
       </Routes>
     </div>
   );
